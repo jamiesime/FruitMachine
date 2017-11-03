@@ -17,19 +17,15 @@ public class TestFruitMachine {
 
     @Before
     public void setUp(){;
-        machine = new FruitMachine(symEnum, 3);
+        machine = new FruitMachine(3);
     }
 
-    @Test
-    public void testAddToSymbols(){
-        assertEquals(4, machine.getNoOfSymbols());
-    }
-
-    @Test
-    public void testGetRandomInt(){
-        FruitMachine spy = Mockito.spy(new FruitMachine(symEnum, 3));
-        Mockito.when(spy.getRandomInt()).thenReturn(1);
-        assertEquals(1, spy.getRandomInt());
-    }
+//    @Test
+//    public void testWonGame(){
+//        FruitMachine spy = Mockito.spy(new FruitMachine(3));
+//        Mockito.when(spy.checkResults())
+//        machine.checkResults();
+//        assert
+//    }
 
 }

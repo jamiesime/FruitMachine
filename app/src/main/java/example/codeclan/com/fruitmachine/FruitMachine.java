@@ -1,6 +1,7 @@
 package example.codeclan.com.fruitmachine;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 /**
@@ -17,24 +18,42 @@ public class FruitMachine {
         slots = new ArrayList<>();
     }
 
-//
-//    public int getNoOfSymbols(){
-//        return symEnum.getSize();
-//    }
-//
-//    public int getRandomInt(){
-//        Random rand = new Random();
-//        int noOfSymbols = getNoOfSymbols();
-//        int random = rand.nextInt(noOfSymbols);
-//        return random;
-//    }
-
     public void spin(){
         for (int i = 0 ; i < noOfSlots ; i++){
-            slots.add(new Slot(Symbol.getRandom().getType()));
+            slots.add(new Slot(Symbol.getRandom()));
             System.out.println(slots.get(i).getType());
         }
     }
+
+    public void checkResults() {
+        for (Symbol sym : Symbol.values()) {
+            int count = 0;
+            for (Slot slot : slots) {
+                if (slot.getSymbol() == sym) {
+                    count ++;
+                }
+            }
+            if (count > 2){
+                Symbol matched = sym;
+                calcWinnings(matched);
+                return;
+            }
+        }
+        calcWinnings(null);
+
+    }
+
+    public void calcWinnings(Symbol match){
+        if (match != null) {
+            int winnings = match.getPayout();
+            System.out.println("Your winnings are " + winnings);
+        }
+        else{
+            System.out.println("You have won absolutely nothing.");
+        }
+    }
+
+
 
 
 

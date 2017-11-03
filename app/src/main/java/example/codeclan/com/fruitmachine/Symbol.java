@@ -6,10 +6,8 @@ package example.codeclan.com.fruitmachine;
 
 public enum Symbol {
 
-    CHERRY("Cherry", 5),
-    BELL("Bell", 10),
-    BAR("Bar", 20),
-    SEVEN("Seven", 50);
+    CHERRY("Cherry", 5);
+
 
     int payout;
     String type;
@@ -34,5 +32,6 @@ public enum Symbol {
     public int getSize(){
         return this.getSize();
     }
+
 
 }

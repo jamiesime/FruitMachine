@@ -10,5 +10,6 @@ public class Runner {
     public static void main(String[] args) {
         FruitMachine machine = new FruitMachine(3);
         machine.spin();
+        machine.checkResults();
     }
 }

@@ -6,13 +6,17 @@ package example.codeclan.com.fruitmachine;
 
 public class Slot {
 
-    private String type;
+    private Symbol type;
 
-    public Slot(String type) {
+    public Slot(Symbol type) {
         this.type = type;
     }
 
     public String getType() {
-        return type;
+        return type.toString();
+    }
+
+    public Symbol getSymbol(){
+        return this.type;
     }
 }
