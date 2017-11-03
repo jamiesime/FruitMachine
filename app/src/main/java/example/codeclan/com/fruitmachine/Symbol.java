@@ -6,7 +6,11 @@ package example.codeclan.com.fruitmachine;
 
 public enum Symbol {
 
-    CHERRY("Cherry", 5);
+    CHERRY("Cherry", 5),
+    APPLE("Apple", 10),
+    BAR("Bar", 20),
+    SEVEN("Seven", 30),
+    JACKPOT("JACKPOT", 100);
 
 
     int payout;

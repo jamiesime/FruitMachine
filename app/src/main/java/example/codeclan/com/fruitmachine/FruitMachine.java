@@ -18,11 +18,19 @@ public class FruitMachine {
         slots = new ArrayList<>();
     }
 
+    public int getNoOfSlots() {
+        return noOfSlots;
+    }
+
     public void spin(){
         for (int i = 0 ; i < noOfSlots ; i++){
             slots.add(new Slot(Symbol.getRandom()));
             System.out.println(slots.get(i).getType());
         }
+    }
+
+    public int getSlotSize() {
+        return slots.size();
     }
 
     public void checkResults() {
@@ -43,13 +51,16 @@ public class FruitMachine {
 
     }
 
-    public void calcWinnings(Symbol match){
+    public int calcWinnings(Symbol match){
+        int winnings = 0;
         if (match != null) {
-            int winnings = match.getPayout();
+            winnings = match.getPayout();
             System.out.println("Your winnings are " + winnings);
+            return winnings;
         }
         else{
             System.out.println("You have won absolutely nothing.");
+            return winnings;
         }
     }
 

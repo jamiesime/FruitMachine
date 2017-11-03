@@ -20,12 +20,30 @@ public class TestFruitMachine {
         machine = new FruitMachine(3);
     }
 
-//    @Test
-//    public void testWonGame(){
 //        FruitMachine spy = Mockito.spy(new FruitMachine(3));
-//        Mockito.when(spy.checkResults())
-//        machine.checkResults();
-//        assert
-//    }
+//        Mockito.when(spy.calcWinnings(Symbol.JACKPOT));
+
+    @Test
+    public void testSpinFillsSlots(){
+        machine.spin();
+        assertEquals(machine.getNoOfSlots(), machine.getSlotSize());
+    }
+
+
+
+    @Test
+    public void testWonPrize(){
+        int result = machine.calcWinnings(Symbol.JACKPOT);
+        assertEquals(100, result);
+    }
+
+    @Test
+    public void testNoPrize(){
+        int result = machine.calcWinnings(null);
+        assertEquals(0, result);
+    }
+
+
+
 
 }
